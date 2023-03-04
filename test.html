@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="bodyTag" class="">
+<div class="center-content">
+    <form id="test-form" class="box">
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <label class="label" for="test_id-input">ID</label>
+                    <div class="control">
+                        <input class="input" type="number" id="test_id" name="test_id-input" value=0 required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="test">Test Type</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="test_type" class="drop-down" name="test_type">
+                                <option value="Unit Testing">Unit</option>
+                                <option value="Integration Testing">Integration</option>
+                                <option value="System Testing">System</option>
+                                <option value="Acceptance Testing">Acceptance</option>
+                                <option value="User Testing">User</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>   
+                <div class="field">
+                    <label class="label" for="outcome-input">Outcome</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="outcome" class="drop-down" name="outcome-input">
+                                <option value="Successful">Successful</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <label class="label" for="test-title-input">Title</label>
+                    <div class="control">
+                        <input class="input" type="text" id="test-title" name="test-title-input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="section-input">Section</label>
+                    <div class="control">
+                        <input class="input" type="text" id="section" name="section-input" required>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="confirmation-input">Confirmation</label>
+            <div class="control">
+                <textarea class="textarea" id="confirmation" name="confirmation-input" rows="2" required></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="change-input">Change (Optional)</label>
+            <div class="control">
+                <textarea class="textarea" id="change" name="change-input" rows="2"></textarea>
+            </div>
+        </div>
+        <button id="test-submit" class="button is-primary is-rounded">Submit</button>
+    </form> 
+
+    <br>
+    <br>
+
+    <div id="test-page">
+
+    </div>
+</div>
+<div class="style-switcher">
+    <div class="day-night s-icon">
+        <i class="fas "></i>
+    </div>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>
