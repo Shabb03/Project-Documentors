@@ -26,6 +26,18 @@ if (theme == "dark") {
     document.body.classList.toggle("dark");
 }
 
+function timeLog() {
+    const d = new Date();
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    let day = d.getDate();
+    let month =  months[d.getMonth()];
+    let hour = d.getHours();
+    let minutes = d.getMinutes();
+
+    return "<br><strong>Log: </strong>"+day+"-"+month+", "+hour+":"+minutes;
+}
+
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.toLocaleLowerCase().substring(1);
 }
@@ -45,7 +57,7 @@ function blogFormValidator(event){
     if (link) {
         htmlString += "<br><strong>Reference:</strong>"+link;
     }
-    htmlString += "<br><strong>Name: </strong>Rishab</p></div><br></br>";
+    htmlString += "<br><strong>Name: </strong>Rishab"+timeLog()+"</p></div><br></br>";
     page.innerHTML += htmlString;
 }
 
@@ -74,18 +86,18 @@ function testFormValidator(event){
     if (change) {
         htmlString += "<br><strong>Change: </strong><br>"+change;
     }
-    htmlString += "<br><strong>Name: </strong>Rishab</p></div><br></br>";
+    htmlString += "<br><strong>Name: </strong>Rishab"+timeLog()+"</p></div><br></br>";
     page.innerHTML += htmlString;
 
     test_id += 1;
     localStorage.setItem("test_id", test_id);
 }
 
-let test_id = localStorage.getItem("test_id");
-document.getElementById("test_id").value = test_id;
-
 let testForm = document.getElementById("test-form");
 if (testForm) {
+    let test_id = localStorage.getItem("test_id");
+    document.getElementById("test_id").value = test_id;
+    
     testForm.addEventListener('submit', testFormValidator);
 }
 
